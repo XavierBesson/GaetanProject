@@ -25,3 +25,11 @@ void ABille::Tick(float DeltaTime)
 
 }
 
+
+
+void ABille::Fusion()
+{
+	BilleColor = BLUE;
+
+}
+
