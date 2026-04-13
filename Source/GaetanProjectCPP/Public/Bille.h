@@ -7,11 +7,10 @@
 #include "Bille.generated.h"
 
 
-UENUM(BlueprintType)
-enum EBilleColor : uint8 {
-	BLUE UMETA(DisplayName = "Rouge"),
-	RED UMETA(DisplayName = "Rouige"),
-	GREEN UMETA(DisplayName = "Roujge")
+enum EBilleColor {
+	BLUE,
+	RED,
+	GREEN
 };
 
 
@@ -23,10 +22,10 @@ class GAETANPROJECTCPP_API ABille : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ABille();
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parametre")
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 	EBilleColor BilleColor = RED;
-
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
