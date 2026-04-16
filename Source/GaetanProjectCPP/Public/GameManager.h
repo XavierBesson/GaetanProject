@@ -3,24 +3,30 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "Subsystems/GameInstanceSubsystem.h"
 #include "GameManager.generated.h"
 
+
+
+
+
 UCLASS()
-class GAETANPROJECTCPP_API AGameManager : public AActor
+class GAETANPROJECTCPP_API UGameManager : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
 	
-public:	
-	// Sets default values for this actor's properties
-	AGameManager();
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+public :
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	float _currentLevelTimer = 0.0f;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TArray<float> _levelTimer;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	float _totalTimer = 0.0f;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	int _currentLevel = 0;
 
 };
