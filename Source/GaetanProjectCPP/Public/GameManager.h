@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "Kismet/GameplayStatics.h"
 #include "GameManager.generated.h"
 
 
@@ -28,5 +29,18 @@ public :
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int _currentLevel = 0;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TArray<FString> _levelList;
+
+
+	UFUNCTION(BlueprintCallable)
+	void LoadLevel(int levelID);
+
+	UFUNCTION(BlueprintCallable)
+	void SetTotalTimer();
+
+	UFUNCTION(BlueprintCallable)
+	void IncrementTimer(float deltaTime);
 
 };
